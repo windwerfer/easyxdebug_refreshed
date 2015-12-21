@@ -1,0 +1,15 @@
+{
+  "title": "easy Xdebug (with moveable icon)",
+  "name": "easyxdebug",
+  "version": "0.7.1",
+  "description": "set debug cookies (eg $cookie[XDEBUG_SESSION]='netbeans-xdebug') on your localhost, to enable remote debugging in eclipse/netbeans. redo of 'easy Xdebug' +moveable icons (eg. to bookmarkbar) +refreshes the icons on tab change +config cookies",
+  "main": "index.js",
+  "author": "windwerfer",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
