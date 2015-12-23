@@ -1,13 +1,58 @@
 {
   "title": "easy Xdebug (with moveable icon)",
   "name": "easyxdebug",
-  "version": "0.7.1",
+  "version": "0.9.0",
   "description": "set debug cookies (eg $cookie[XDEBUG_SESSION]='netbeans-xdebug') on your localhost, to enable remote debugging in eclipse/netbeans. redo of 'easy Xdebug' +moveable icons (eg. to bookmarkbar) +refreshes the icons on tab change +config cookies",
   "main": "index.js",
   "author": "windwerfer",
   "engines": {
     "firefox": ">=38.0a1"
   },
+  "preferences": [
+	{
+        "name": "DebugCookieName",
+        "title": "Name of the debug cookie",
+        "description": "Default: XDEBUG_SESSION",
+        "type": "string",
+        "value": "XDEBUG_SESSION"
+    },
+	{
+        "name": "DebugCookieValue",
+        "title": "Value of the debug cookie",
+        "description": "Default: netbeans-xdebug",
+        "type": "string",
+        "value": "netbeans-xdebug"
+    },
+    {
+        "name": "DebugCookieTimeout",
+		"title": "Timeout of the debug cookie",
+        "description": "in minutes, -1 for length of session, default: -1",
+        "type": "string",
+        "value": "-1"
+    },
+    
+    {
+        "name": "ProfilerCookieName",
+        "title": "Name of the profile cookie",
+        "description": "Default: XDEBUG_PROFILE",
+        "type": "string",
+        "value": "XDEBUG_PROFILE"
+    },
+	{
+        "name": "ProfilerCookieValue",
+        "title": "Value of the profiler cookie",
+        "description": "Default: 1",
+        "type": "string",
+        "value": "1"
+    },
+    {
+        "name": "ProfilerCookieTimeout",
+		"title": "Timeout of the profiler cookie",
+        "description": "in minutes, -1 for length of session, default: -1",
+        "type": "string",
+        "value": "-1"
+    }
+  ],
   "license": "MIT",
   "keywords": [
     "jetpack"
