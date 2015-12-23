@@ -1,15 +1,16 @@
-var self = require('sdk/self');
 
+var self = require('sdk/self');
 var button = require("sdk/ui/button/action").ActionButton;
 var tabs = require('sdk/tabs');
 var sp   = require("sdk/simple-prefs");
+
 
 var imgXDebugerEnabled  = self.data.url("debug_enabled.png");
 var imgXDebugerDisabled = self.data.url("debug_disabled.png");
 var imgProfilerEnabled  = self.data.url("profiler_enabled.png");
 var imgProfilerDisabled = self.data.url("profiler_disabled.png");
 
-console.log("test");
+//console.log("test");
 
 // listener to 
 tabs.on('activate', function(tab) {
@@ -77,12 +78,12 @@ function setCookie(tab,cookieName,cookieValue='',minutes=null) {
 
     var cookieStr = escape(cookieName) +'='+escape(cookieValue)+expStr+'; path=/;';
     
-    tabs.activeTab.attach({
-        contentScript:
-            'document.cookie = "'+cookieStr+'";'
-    });
+    var worker = tabs.activeTab.attach({
+        contentScriptFile: self.data.url("my-outsourced.js")
+    });   
     
-    console.log("test22");
+    worker.port.emit("setCookie", cookieStr);
+    
 }
 
 // find cookie value in the cookie string (document.cookie)
